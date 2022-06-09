@@ -58,16 +58,16 @@ class Rossmann(object):
        
        def feature_engineering(self, df2):       
               #year
-              df2['year']= df2['date'].dt.year
+              df2['year'] = df2['date'].dt.year
               #month
-              df2['month']= df2['date'].dt.month
+              df2['month'] = df2['date'].dt.month
               #day
-              df2['day']= df2['date'].dt.day
+              df2['day'] = df2['date'].dt.day
               #week of year
-              df2['week_of_year']= df2['date'].dt.isocalendar().week
-              df2['week_of_year']= df2['week_of_year'].astype('int64')
+              df2['week_of_year'] = df2['date'].dt.isocalendar().week
+              df2['week_of_year'] = df2['week_of_year'].astype('int64')
               #year week
-              df2['year_week']= df2['date'].dt.strftime('%Y-%W')
+              df2['year_week'] = df2['date'].dt.strftime('%Y-%W')
 
               #competition since
               df2['competition_since'] = df2.apply(lambda x: datetime.datetime(year=x['competition_open_since_year'], month=x['competition_open_since_month'], day=1), axis=1)
